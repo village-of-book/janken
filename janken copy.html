@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ドキドキ二択クイズ</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet" />
+  <link rel="stylesheet" href="css/janken.css">
+</head>
+
+<body>
+  <main>
+
+    <section>
+      <h1>ドキドキ二択クイズ</h1>
+    </section>
+
+
+    <section>
+      <h2 id="quiz_rule">クイズのルール</h2>
+    </section>
+
+    <!-- <h2 id="quiz_rule">クイズのルール</h2>
+
+    <section id="rule_detail">
+      <h2>クイズのルール</h2>
+      <ul>
+        <li>考える時間は、５秒</li>
+        <li>
+          <p>もし間違えたら即失格</p>
+          <p>今回のCheese ACADEMYの卒業は諦めろ</p>
+        </li>
+        <li>①か、②で答えること</li>
+        <li>①か、②の他や曖昧な答えは全て間違いとみなす</li>
+      </ul>
+
+    </section>
+
+    <div id="rule">
+      <h2>クイズのルール</h2>
+      <ul>
+        <li>考える時間は、５秒</li>
+        <li>
+          <p>もし間違えたら即失格</p>
+          <p>今回のCheese ACADEMYの卒業は諦めろ</p>
+        </li>
+        <li>①か、②で答えること</li>
+        <li>①か、②の他や曖昧な答えは全て間違いとみなす</li>
+      </ul>
+
+    </div> -->
+
+
+    <section>
+      
+      <ul>
+        <li>考える時間は、５秒</li>
+        <li>
+          <p>もし間違えたら即失格</p>
+          <p>今回のCheese ACADEMYの卒業は諦めろ</p>
+        </li>
+        <li>①か、②で答えること</li>
+        <li>①か、②の他や曖昧な答えは全て間違いとみなす</li>
+      </ul>
+
+    </section>
+
+    <!-- <div class="quiz_area">
+      <h2>それでは問題</h2>
+      <div id="quiz_content">
+        <p>お前の母親と恋人が悪党に捕まり、</p>
+        <p>一人しか助けられない。</p>  
+      </div>
+    </div> -->
+
+    <section>
+      <h2>それでは問題</h2>
+    </section>
+
+    <section id="quiz_content">
+      <p>お前の母親と恋人が悪党に捕まり、</p>
+      <p>一人しか助けられない。</p>
+    </section>
+    
+
+    <section  id="result">
+      <h2>回答は？？</h2>
+    </section>
+
+
+    <section>
+      <button id="button_stone">
+        <h2>①</h2>
+        <p id="answer1">母親</p>
+      </button>
+      <button id="button2">
+        <h2>②</h2>
+      <p id="answer2">恋人</p></button>
+    </section>
+
+  </main>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script>
+    //  ボタン１押下時の設定
+    $("#button_stone").on("click",function(){
+    //乱数を設定する
+      const random_number = Math.floor(Math.random()*3);
+      if (random_number === 0) {
+        $("#quiz_content").text("ここから余計な発言をしたら即失格とする。さぁ答えな")
+    
+    } else if (random_number=== 1) {
+      $("#quiz_content").text("息子と娘が誘拐された。一人しか取り戻せない。")
+    
+    }
+
+      else {
+        $("#quiz_content").text("５人のチームで活動している。どちらの道を選ぶ。")
+    
+    }
+
+    // ボタン１のテキスト設定
+    if (random_number === 0) {
+        $("#answer1").text("クイズを受ける")
+    
+    } else if (random_number=== 1) {
+      $("#answer1").text("娘")
+    
+    }
+
+      else {
+        $("#answer1").text("５人で行けるが長く困難な道")
+    
+    }
+
+    // ボタン２のテキスト設定
+
+    if (random_number === 0) {
+        $("#answer2").text("受けない")
+    
+    } else if (random_number=== 1) {
+      $("#answer2").text("息子")
+    
+    }
+
+      else {
+        $("#answer2").text("３人しか行けないが短く簡単な道")
+    
+    }
+
+
+    });
+
+    //ボタン２の押下時の設定 
+
+    $("#button2").on("click",function(){
+    //乱数を設定する
+      const random_number = Math.floor(Math.random()*3);
+      if (random_number === 0) {
+        $("#quiz_content").text("ここから余計な発言をしたら即失格とする。さぁ答えな")
+    
+    } else if (random_number=== 1) {
+      $("#quiz_content").text("息子と娘が誘拐された。一人しか取り戻せない。")
+    
+    }
+
+      else {
+        $("#quiz_content").text("５人のチームで活動している。どちらの道を選ぶ。")
+    
+    }
+
+    if (random_number === 0) {
+        $("#answer1").text("クイズを受ける")
+    
+    } else if (random_number=== 1) {
+      $("#answer1").text("娘")
+    
+    }
+
+      else {
+        $("#answer1").text("５人で行けるが長く困難な道")
+    
+    }
+
+    if (random_number === 0) {
+        $("#answer2").text("受けない")
+    
+    } else if (random_number=== 1) {
+      $("#answer2").text("息子")
+    
+    }
+
+      else {
+        $("#answer2").text("３人しか行けないが短く簡単な道")
+    
+    }
+
+
+    });
+    
+
+  
+
+  </script>
+</body>
+
+</html>
